@@ -7,11 +7,14 @@
 #   to = "/.netlify/functions/server"
 #   status = 200
 
-[functions]
+[build]
+  functions = "functions"  # Ensure this path is correct
   external_node_modules = ["express"]
   node_bundler = "esbuild"
+
 [[redirects]]
   force = true
   from = "/api/*"
   status = 200
   to = "/.netlify/functions/server/:splat"
+
